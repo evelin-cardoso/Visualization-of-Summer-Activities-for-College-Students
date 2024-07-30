@@ -1,0 +1,21 @@
+Summer Activities Visualization for College Students
+This project visualizes different ways college students can maximize their summer break. We create various types of plots using Python, including 3D plots and interactive plots, to represent data related to internships, volunteering, summer jobs, summer classes, and career exploration. Each plot is styled with appealing colors to enhance readability and engagement.
+
+Table of Contents
+Introduction
+Installation
+Usage
+Plots
+Pie Chart
+Bar Chart
+3D Scatter Plot
+Interactive Bar Chart
+Contributing
+License
+Introduction
+College students have various options to make the most of their summer break. This project aims to provide a visual representation of how students distribute their time among different activities such as internships, volunteering, summer jobs, summer classes, and career exploration.Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
