@@ -1,0 +1,50 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+
+# Data preparation
+activities = ['Internships', 'Volunteering', 'Summer Jobs', 'Summer Classes', 'Career Exploration']
+percentages = [35, 20, 25, 15, 5]  # Example data (percentages)
+
+# Plot 1: Pie Chart / Gráfico 1: Gráfico de Pizza
+plt.figure(figsize=(10, 6))
+colors = plt.cm.Set3(np.linspace(0, 1, len(activities)))
+plt.pie(percentages, labels=activities, autopct='%1.1f%%', colors=colors, startangle=140)
+plt.title('Percentage Distribution of Summer Activities')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
+plt.show()
+
+# Plot 2: Bar Chart / Gráfico 2: Gráfico de Barras
+plt.figure(figsize=(10, 6))
+plt.bar(activities, percentages, color=colors)
+plt.title('Distribution of Summer Activities')
+plt.xlabel('Activities')
+plt.ylabel('Percentage')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Plot 3: 3D Scatter Plot with Plotly / Gráfico 3: Gráfico de Dispersão 3D com Plotly
+fig = go.Figure(data=[go.Scatter3d(
+    x=np.random.uniform(low=0, high=10, size=100),
+    y=np.random.uniform(low=0, high=10, size=100),
+    z=np.random.uniform(low=0, high=10, size=100),
+    mode='markers',
+    marker=dict(
+        size=8,
+        color=np.random.randn(100),  # set color to an array/list of desired values
+        colorscale='Viridis',  # choose a colorscale
+        opacity=0.8
+    )
+)])
+
+fig.update_layout(title='3D Scatter Plot of Random Data Points',
+                  scene=dict(xaxis_title='X Axis', yaxis_title='Y Axis', zaxis_title='Z Axis'))
+fig.show()
+
+# Plot 4: Interactive Bar Chart with Plotly Express / Gráfico 4: Gráfico de Barras Interativo com Plotly Express
+df = pd.DataFrame({'Activities': activities, 'Percentages': percentages})
+fig = px.bar(df, x='Activities', y='Percentages', color='Activities', title='Interactive Bar Chart of Summer Activities')
+fig.show()
